@@ -19,6 +19,14 @@ user_manager = UserManager()
 payment_manager = PaymentManager()
 app.config['UPLOAD_FOLDER'] = payment_manager.uploads_dir
 
+@app.route('/')
+def home():
+    return jsonify({
+        "status": "online",
+        "message": "Scam Shield AI Backend is Running Securely",
+        "version": "1.0.0"
+    })
+
 @app.route('/api/user/<user_id>/status', methods=['GET'])
 def get_user_status(user_id):
     user = user_manager.get_user(user_id)
