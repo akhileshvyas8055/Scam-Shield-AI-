@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# JavaScript / Node
+node_modules/
+dist/
+build/
+.npm
+.eslintcache
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Project specific
+backend/uploads/payment_proofs/*
+!backend/uploads/payment_proofs/.gitkeep
+backend/data/*.json
+!backend/data/safe_internships.json

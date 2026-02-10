@@ -1,0 +1,360 @@
+/* Chatbot Container */
+.chatbot-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Toggle Button (Doremon Face) */
+/* Toggle Button (Doremon Face) */
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #00AEEF;
+    /* Doremon Blue */
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0, 174, 239, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+
+.chatbot-toggle:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.chatbot-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Doremon Face CSS Art */
+.doremon-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #00AEEF;
+    border-radius: 50%;
+}
+
+.doremon-face::after {
+    /* White face area */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 70%;
+    background: white;
+    border-radius: 50% 50% 45% 45%;
+}
+
+.doremon-eyes {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 2;
+}
+
+.eye {
+    width: 14px;
+    height: 16px;
+    background: white;
+    border: 1px solid #333;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pupil {
+    width: 4px;
+    height: 6px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    transform: translateY(-50%);
+}
+
+.eye.left .pupil {
+    right: 2px;
+}
+
+.eye.right .pupil {
+    left: 2px;
+}
+
+.doremon-nose {
+    width: 10px;
+    height: 10px;
+    background: #EE1C23;
+    /* Red nose */
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    border: 1px solid #333;
+}
+
+.doremon-whiskers {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 40px;
+}
+
+.chat-bubble-text {
+    position: absolute;
+    top: 50%;
+    right: 110%;
+    transform: translateY(-50%);
+    background: white;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 12px 12px 2px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    animation: bounceIn 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    pointer-events: none;
+}
+
+.chat-bubble-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -6px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid white;
+    border-top: 6px solid transparent;
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+/* Use pseudo-elements for whiskers if possible or simple lines */
+/* Keeping it simple for CSS art in small button */
+
+.tooltip {
+    position: absolute;
+    top: -30px;
+    background: #333;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.chatbot-toggle:hover .tooltip {
+    opacity: 1;
+}
+
+/* Chat Window */
+.chat-window {
+    width: 380px;
+    height: 600px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: popIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    border: 2px solid #00AEEF;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.chat-header {
+    background: #00AEEF;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bot-avatar {
+    font-size: 1.5rem;
+    background: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: #f0f7ff;
+}
+
+.message {
+    max-width: 80%;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    position: relative;
+}
+
+.message.doremon {
+    background: white;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e1e1e1;
+}
+
+.message.user {
+    background: #00AEEF;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 174, 239, 0.3);
+}
+
+.chat-suggestions {
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    border-top: 1px solid #eee;
+    background: white;
+    scrollbar-width: none;
+    /* Hide scrollbar */
+}
+
+.chat-suggestions::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-suggestions button {
+    background: #eef9fe;
+    border: 1px solid #bce6fa;
+    color: #0077a3;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.chat-suggestions button:hover {
+    background: #00AEEF;
+    color: white;
+    border-color: #00AEEF;
+}
+
+.chat-input-area {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 0.5rem;
+    background: white;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #eee;
+    border-radius: 24px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.chat-input-area input:focus {
+    border-color: #00AEEF;
+}
+
+.chat-input-area button {
+    background: #00AEEF;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.chat-input-area button:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .chat-window {
+        width: 90vw;
+        height: 70vh;
+        right: 5vw;
+        bottom: 5rem;
+        position: fixed;
+    }
+}

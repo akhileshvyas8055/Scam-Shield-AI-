@@ -1,0 +1,67 @@
+[
+  {
+    "id": "1",
+    "title": "AI & Data Science Internship",
+    "company": "Infosys",
+    "domain": "Artificial Intelligence",
+    "duration": "3 Months",
+    "stipend": "Paid",
+    "start_date": "April 2026",
+    "image_url": "https://via.placeholder.com/400x200/0066cc/ffffff?text=Infosys+AI",
+    "safety_score": 14,
+    "status": "AI-Verified Safe",
+    "apply_url": "https://www.infosys.com/careers"
+  },
+  {
+    "id": "2",
+    "title": "Full Stack Development Training",
+    "company": "TCS",
+    "domain": "Web Development",
+    "duration": "6 Months",
+    "stipend": "\u20b915,000/month",
+    "start_date": "March 2026",
+    "image_url": "https://via.placeholder.com/400x200/009933/ffffff?text=TCS+Development",
+    "safety_score": 8,
+    "status": "AI-Verified Safe",
+    "apply_url": "https://www.tcs.com/careers"
+  },
+  {
+    "id": "3",
+    "title": "Cloud Computing Internship",
+    "company": "Wipro",
+    "domain": "Cloud & DevOps",
+    "duration": "4 Months",
+    "stipend": "\u20b912,000/month",
+    "start_date": "May 2026",
+    "image_url": "https://via.placeholder.com/400x200/ff6600/ffffff?text=Wipro+Cloud",
+    "safety_score": 12,
+    "status": "AI-Verified Safe",
+    "apply_url": "https://careers.wipro.com"
+  },
+  {
+    "id": "4",
+    "title": "Cybersecurity Training Program",
+    "company": "HCL Technologies",
+    "domain": "Cybersecurity",
+    "duration": "3 Months",
+    "stipend": "Free + Certificate",
+    "start_date": "April 2026",
+    "image_url": "https://via.placeholder.com/400x200/cc0000/ffffff?text=HCL+Security",
+    "safety_score": 18,
+    "status": "AI-Verified Safe",
+    "apply_url": "https://www.hcltech.com/careers"
+  },
+  {
+    "id": "5",
+    "title": "Machine Learning Internship",
+    "company": "Tech Mahindra",
+    "domain": "Machine Learning",
+    "duration": "5 Months",
+    "stipend": "\u20b918,000/month",
+    "start_date": "March 2026",
+    "image_url": "https://via.placeholder.com/400x200/9900cc/ffffff?text=Tech+Mahindra+ML",
+    "safety_score": 10,
+    "status": "AI-Verified Safe",
+    "apply_url": "https://www.techmahindra.com/careers"
+  }
+]

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI Scam Detector</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 400px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .container {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 10px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      resize: vertical;
+    }
+    
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+    }
+    
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    .result {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+    
+    .result.show {
+      display: block;
+    }
+    
+    .result.safe {
+      background: #d1fae5;
+      border-left: 4px solid #10b981;
+    }
+    
+    .result.suspicious {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+    }
+    
+    .result.danger {
+      background: #fee2e2;
+      border-left: 4px solid #ef4444;
+    }
+    
+    .score {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .verdict {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    
+    .reasons {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    
+    .reasons li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛡️ AI Scam Detector</h1>
+    
+    <textarea id="offerText" placeholder="Paste internship offer text here..."></textarea>
+    <input type="email" id="email" placeholder="Contact email (optional)">
+    <input type="text" id="website" placeholder="Website URL (optional)">
+    
+    <button id="analyzeBtn">Analyze Now</button>
+    
+    <div id="result" class="result">
+      <div class="score" id="score"></div>
+      <div class="verdict" id="verdict"></div>
+      <div class="reasons">
+        <strong>Reasons:</strong>
+        <ul id="reasonsList"></ul>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

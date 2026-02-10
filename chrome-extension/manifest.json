@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "AI Scam Detector",
+  "version": "1.0.0",
+  "description": "Detect fake internship and training scams instantly",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png.jpeg",
+      "48": "icon48.png.jpeg",
+      "128": "icon128.png.jpeg"
+    }
+  },
+  "icons": {
+    "16": "icon16.png.jpeg",
+    "48": "icon48.png.jpeg",
+    "128": "icon128.png.jpeg"
+  },
+  "host_permissions": [
+    "http://localhost:5000/*"
+  ]
+}
